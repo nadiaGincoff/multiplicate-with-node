@@ -1,7 +1,7 @@
 {
-  "name": "bases-de-node",
+  "name": "node-bases",
   "version": "1.0.0",
-  "description": "Practica de aplicacion de linea de comando con Node.js",
+  "description": "Command line application practice with Node.js",
   "main": "App.js",
   "dependencies": {
     "colors": "^1.4.0",
