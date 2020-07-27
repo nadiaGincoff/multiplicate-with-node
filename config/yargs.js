@@ -3,15 +3,15 @@ const opts = {
         demand: true,
         alias: 'b'
     }, 
-    limite: {
+    limit: {
         alias: 'l',
         default: 10
     }
 }
 
 const argv = require('yargs')
-    .command('listar','Imprime en consola la tabla de multiplicar', opts)
-    .command('crear','genera un archivo con la tabla de multiplicar', opts)
+    .command('list','Prints the multiplicate table in console', opts)
+    .command('create','Generates a file with the multiplication table', opts)
     .help()
     .argv;
 

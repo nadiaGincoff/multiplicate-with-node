@@ -1,38 +1,38 @@
 const argv = require('./config/yargs').argv
 const colors = require('colors');
-const { crearArchivo, listarArchivos } = require('./Multiplicar/Multiplicar');
+const { createFile, listFiles } = require('./multiplicate/multiplicate');
 
 
 /**
- * Forma volatil de acceder al parametro. 
+ * Volatile way to access the parameter. 
  */
 
 // let argv = process.argv
 // let parametro = argv[2]
 
-// // Separo elementos, convierto un string a un array 
+//// Separete elements, convert string to an array
 // let base = parametro.split('=')[1]
 
 
 /**
- * Forma con paquete Yargs. 
+ * Shape with Yargs package. 
  */
 
-let comando = argv._[0]
+let command = argv._[0]
 
-switch( comando ) {
-    case 'listar':
-        listarArchivos(argv.base, argv.limite)
+switch( command ) {
+    case 'list':
+        listFiles(argv.base, argv.limite)
     break;
 
-    case 'crear': 
-        crearArchivo(argv.base, argv.limite)
-            .then(archivo => console.log(`Archivo creado: ${archivo}`.magenta))
+    case 'create': 
+        createFile(argv.base, argv.limite)
+            .then(file => console.log(`File create: ${file}`.magenta))
             .catch(err => console.log(err));
     break;
 
     default: 
-        console.log('Comando no reconocido');
+        console.log('Command not recognized');
 }
 
 console.log(argv)

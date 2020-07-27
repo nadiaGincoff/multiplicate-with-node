@@ -1,28 +1,29 @@
 const fs = require('fs');
 const colors = require('colors');
+
 /**
- * Asíncronamente escribe datos en un archivo
+ * fs.WriteFile() asynchronously writes data to a file 
  * Params:
- * 1- File: nombre del archivo/ path
- * 2- Data: Lo que queremos grabar
- * 3- Callback: para saber si se ejecuto o no
+ * 1- File: File's name/ path
+ * 2- Data: What we want to record
+ * 3- Callback: check if it was executed or not
  */
 
-let crearArchivo = (base, limite = 10) => {
+let createFile = (base, limit = 10) => {
 
     return new Promise ((resolve, reject) => {
         
         if (!Number(base)) {
-            reject(`El valor introducido ${ base }, no es un numero`)
+            reject(`The entered value ${ base }, is not a number`)
             return;
         }
 
         let data = '';
-        for(let i = 1; i <= limite; i++) {
+        for(let i = 1; i <= limit; i++) {
             data += `${base} * ${i} = ${base * i}\n`
         }
 
-        fs.writeFile(`./tablas/tabla-${base}-al-${limite}.txt`, data, (err) => {
+        fs.writeFile(`./tables/table-${base}.txt`, data, (err) => {
             if (err) 
                 reject(err);
             else 
@@ -31,16 +32,16 @@ let crearArchivo = (base, limite = 10) => {
     });
 }
 
-let listarArchivos = (base, limite) => {
+let listFiles = (base, limit) => {
     console.log('******************'.magenta)
-    console.log(`Tabla del numero  ${base}`.white)
+    console.log(`Number table ${base}`.white)
     console.log('******************'.magenta)
-    for(let i = 1; i <= limite; i++) {
+    for(let i = 1; i <= limit; i++) {
         console.log(`${base} * ${i} = ${base * i}`)
     }
 }
 
 module.exports = {
-    listarArchivos,
-    crearArchivo,
+    listFiles,
+    createFile,
 }
