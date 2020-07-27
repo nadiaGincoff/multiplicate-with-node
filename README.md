@@ -1,8 +1,9 @@
-## Multiplicar Console App
+# Multiplication table with Node.js
 
-Esta es una aplicación para generar archivos de tablas de multiplicar.
-
+#### This is an application for generate multiplication table files
 Recuerden ejecutar el siguiente comando para reconstruir los módulos de node en caso de que quieran usar este ejercicio.
+
+Remember to the run the following command to rebuild node modules in case you want to use this exercise.
 
 ```
 npm install
